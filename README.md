@@ -10,5 +10,5 @@ Vice https://vice-emu.sourceforge.io/
 
 # How to run
 
-type in this command
-java -jar "{type the path to kickass here}KickAss.jar" "$(FULL_CURRENT_PATH)" -o "$(CURRENT_DIRECTORY)\$(NAME_PART).prg" -showmem -execute "(path to vice)\bin\x64sc.exe" 
+type in this command and where there is curly brackets follow the insturctions inside them:
+java -jar "{type the path to kickass here}KickAss.jar" "{path to the game file}{asm file name}.asm" -o "{path to the game file}{asm file name}.prg" -showmem -execute "{path to vice}\bin\x64sc.exe" 
