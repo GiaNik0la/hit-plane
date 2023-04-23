@@ -15,5 +15,5 @@ Vice https://vice-emu.sourceforge.io/
 type in this command and where there is curly brackets follow the insturctions inside them:
 </br>
 ```
-java -jar "{type the path to kickass here}KickAss.jar" "{path to the game file}{asm file name}.asm" -o "{path to the game file}{asm file name}.prg" -showmem -execute "{path to vice}\bin\x64sc.exe"
+java -jar "{type the path to kickass here}KickAss.jar" "{path to the game file}code.asm" -o "{path to the game file}code.prg" -showmem -execute "{path to vice}\bin\x64sc.exe"
 ```
