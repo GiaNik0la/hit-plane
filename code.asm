@@ -25,6 +25,7 @@
 		sta v+33
 		sta v+21
 		sta score
+		sta score+1
 		
 		lda #0
 		ldx #0
@@ -385,7 +386,13 @@
 		cmp #1
 		beq dead
 		
-		inc score
+		lda score+1
+		clc
+		adc #1
+		sta score+1
+		lda score
+		adc #0
+		sta score
 		lda v+21
 		and #253
 		sta v+21
@@ -407,10 +414,19 @@
 		sta v+39
 	deli:
 		dec lives
+		lda score+1
+		cmp #0
+		bne anch
 		lda score
 		cmp #0
 		beq endit
-		dec score
+	anch:
+		sec
+		sbc #1
+		sta score+1
+		lda score
+		sbc #0
+		sta score
 	endit:
 		rts
 	
@@ -450,15 +466,15 @@
 		lda #22
 		sta $d3
 		
-		ldx score
-		lda #0
+		ldx score+1
+		lda score
 		jsr $bdcd
 		
 		rts
 		
 	last: .byte 255
 	
-	score: .byte 0
+	score: .byte 0, 0
 	
 	it: .byte 0
 	
